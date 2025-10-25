@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ tour.name }}</h2>
+<p>{{ tour.description }}</p>
+<p>Time: {{ tour.time_range }}</p>
+<p>Price: {{ tour.price }} VND</p>
+<p>Tags: {{ tour.tags | join(', ') }}</p>
+
+<h3>Reviews</h3>
+<ul>
+    {% for review in reviews %}
+        <li><strong>{{ review.username }}</strong>: {{ review.review_text }} (Rating: {{ review.rating }})</li>
+    {% endfor %}
+</ul>
+{% endblock %}

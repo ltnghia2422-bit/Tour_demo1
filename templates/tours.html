@@ -1,0 +1,12 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Tours</h2>
+<ul>
+    {% for tour in tours %}
+        <li>
+            <a href="{{ url_for('tour_detail', tour_id=tour.id) }}">{{ tour.name }}</a> - {{ tour.price }} VND
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

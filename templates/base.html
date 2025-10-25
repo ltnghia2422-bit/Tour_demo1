@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>High5 Travel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">High5</a>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('tours') }}">Tours</a>
+            <a href="#">Social</a>
+            <a href="#">Partner</a>
+            <a href="#">Dark/Light Mode</a>
+            <a href="#">Lang: En/Vi</a>
+            {% if 'username' in session %}
+                <a href="{{ url_for('profile') }}">Profile ({{ session['username'] }})</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('signup') }}">Sign Up</a>
+            {% endif %}
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

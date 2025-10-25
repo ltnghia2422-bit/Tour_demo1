@@ -1,0 +1,10 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h2>Registered Accounts</h2>
+<ul>
+    {% for username, password in users.items() %}
+        <li>{{ username }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

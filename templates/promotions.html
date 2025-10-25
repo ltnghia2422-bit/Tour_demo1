@@ -1,0 +1,10 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h2>Promotions</h2>
+<ul>
+    {% for promo in promotions %}
+        <li>{{ promo.name }} - {{ promo.percent }}% off until {{ promo.expired_date }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
